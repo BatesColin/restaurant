@@ -1,0 +1,19 @@
+<h1>Cuisines</h1>
+<a href='/items/new'>Add a New Card<a/>
+<a href='/'>Back to Home<a/>
+<a href='/items/find'>Find by Id<a/>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Update</th>
+    <th>Delete</th>
+  </tr>
+  @foreach(var category in Model)
+  {
+  <tr>
+    <td>@category.GetCuisineName()</td>
+    <td><a href="/categories/@category.GetCuisineId()/update">Edit</a></td>
+    <td><a href="/categories/@category.GetCuisineId()/delete">Delete</a></td>
+  </tr>
+  }
+</table>

@@ -1,0 +1,30 @@
+<h1>Restaurant</h1>
+<a href='/items/new'>Add a New Restaurant<a/>
+<a href='/'>Back to Home<a/>
+<a href='/items/find'>Find by Id<a/>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Location</th>
+    <th>Popularity</th>
+    <th>Price Range</th>
+    <th>Rating (1-5)</th>
+    <th>Description</th>
+    <th>Cuisine Type</th>
+    <th>Update</th>
+    <th>Delete</th>
+  </tr>
+  @foreach(var item in Model)
+  {
+  <tr>
+    <td>@item.GetDinerName()</td>
+    <td>@item.GetLocation()</td>
+    <td>@item.GetPopularity()</td>
+    <td>@item.GetRating()</td>
+    <td>@item.GetDescription()</td>
+    <td>@item.GetCuisine_Id()</td>
+    <td><a href="/items/@item.GetId()/update">Edit</a></td>
+    <td><a href="/items/@item.GetId()/delete">Delete</a></td>
+  </tr>
+  }
+</table>
